@@ -1,73 +1,6 @@
-/******************************************************/
-//       THIS IS A GENERATED FILE - DO NOT EDIT       //
-/******************************************************/
-
-#include "Particle.h"
-#line 1 "c:/Users/musta/Desktop/SIT210Code/120p/src/120p.ino"
-void setup();
-void dot();
-void dash();
-void name();
-void loop();
-void blink();
-#line 1 "c:/Users/musta/Desktop/SIT210Code/120p/src/120p.ino"
 const int ledPin = D7;
-const int interruptPin = D2;
-volatile int state = HIGH;
-
-void setup()
-{
-  pinMode(ledPin, OUTPUT);
-  pinMode(interruptPin, INPUT_PULLUP);
-  attachInterrupt(interruptPin, blink, CHANGE);
-}
-
-void dot()
-{
-  digitalWrite(ledPin, HIGH);
-  delay(333.33);
-  digitalWrite(ledPin, LOW);
-  delay(1000);
-}
-
-void dash()
-{
-  digitalWrite(ledPin, HIGH);
-  delay(1000);
-  digitalWrite(ledPin, LOW);
-  delay(1000);
-}
-
-void name()
-{
-  dot();
-  dot();
-  dot();
-  dot();
-}
-
-void loop()
-{
-  if (state == LOW)
-  {
-    name();
-  }
-}
-
-void blink()
-{
-  // state = !state;
-}
-
-// // // // // // // // // // // // // // // // //
-
-/*BACKUP
-// EXAMPLE USAGE
-
-void blink(void);
-int ledPin = D7;
-volatile int switchPin = D2;
-
+const int switchPin = D2;
+volatile int state = LOW;
 
 void setup()
 {
@@ -92,26 +25,87 @@ void dash()
   delay(1000);
 }
 
-void name()
-{
-  dot();
-  dot();
-  dot();
-  dot();
-}
-
 void loop()
 {
-
-  if (switchPin == LOW)
+  if (state == HIGH)
   {
-    name();
-  }
+    // Mustafa
+    // M
+    dash();
+    dash();
+    delay(3000);
 
+    // U
+    dot();
+    dot();
+    dash();
+    delay(3000);
+
+    // S
+    dot();
+    dot();
+    dot();
+    delay(3000);
+
+    // T
+    dash();
+    delay(3000);
+
+    // A
+    dot();
+    dash();
+    delay(3000);
+
+    // F
+    dot();
+    dot();
+    dash();
+    dot();
+    delay(3000);
+
+    // A
+    dot();
+    dash();
+    delay(3000);
+
+    // Arsala
+    delay(3500);
+    // A
+    dot();
+    dash();
+    delay(3000);
+
+    // R
+    dot();
+    dash();
+    dot();
+    delay(3000);
+
+    // S
+    dot();
+    dot();
+    dot();
+    delay(3000);
+
+    // A
+    dot();
+    dash();
+    delay(3000);
+
+    // L
+    dot();
+    dash();
+    dot();
+    dot();
+    delay(3000);
+
+    // A
+    dot();
+    dash();
+  }
 }
 
 void blink()
 {
-  switchPin = !switchPin;
+  state = !state;
 }
-*/
